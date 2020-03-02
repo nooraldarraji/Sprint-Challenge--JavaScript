@@ -7,9 +7,9 @@
   * In the body of the function return the callback with the two parameters that you created
 */
 
-sayIt = (x) => console.log (x); // Just for the output
-const sayMyName = (first,last,cb) =>  cb(first + last );
-sayMyName('Noor ','Al Darraji',sayIt)
+
+const consume = (parm1, parm2, cb) => cb(parm1, parm2)
+
 
 /* Step 2: Create several functions to callback with consume();
   * Create a function named add that returns the sum of two numbers
@@ -17,25 +17,23 @@ sayMyName('Noor ','Al Darraji',sayIt)
   * Create a function named greeting that accepts a first and last name and returns "Hello first-name last-name, nice to meet you!"
 */
 
-const consume = (p1 , p2 , cb) => console.log (cb(p1, p2));
-
-add = (x, y) => ( x + y );
-multiply = (x, y) =>  ( x * y );
-greeting = (first , last) => `Hello ${first} ${last}, nice to meet you!`;
-
-
+const add = (num1, num2) => num1 + num2
+const multiply = (num1, num2) => num1 * num2
+const greeting = (f, l) => `Hello ${f} ${l}, nice to meet you!`
 
 /* Step 3: Check your work by un-commenting the following calls to consume(): */
-consume(2,2,add); // 4
-consume(10,16,multiply); // 160
-consume("Mary","Poppins", greeting); // Hello Mary Poppins, nice to meet you!
+console.log(consume(2, 2, add)); // 4
+console.log(consume(10, 16, multiply)); // 160
+console.log(consume("Mary", "Poppins", greeting)); // Hello Mary Poppins, nice to meet you!
+
 
 
 // ==== Closures ==== 
 
 // Explain in your own words why `nestedfunction()` can access the variable `internal`.
 
-// Explanation: Because internal variable is in the global scope to `nestedfunction()`.
+
+// Explanation: Because console.log "external" is the first line to be excuted in "myFunction" function.
 
 
 const external = "I'm outside the function";
